@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "industrialcraft3:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "industrialcraft3:copper_block"
+  }
+}

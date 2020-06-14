@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "industrialcraft3:blocks/rubber_log_top_block",
+    "side": "industrialcraft3:blocks/rubber_log_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "industrialcraft3:blocks/rubber_leaves_block"
+  }
+}
