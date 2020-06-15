@@ -27,6 +27,13 @@ public class OreGen {
                                             RegistryHandler.COPPER_ORE_BLOCK.get().getDefaultState(), 10))
                                     .withPlacement(customeConfiguration));
 
+            // Uranium generation
+            ConfiguredPlacement uraniumConfiguration = Placement.COUNT_RANGE.configure(new CountRangeConfig(1, 0, 0, 20));
+            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
+                                    .withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+                                            RegistryHandler.URANIUM_ORE_BLOCK.get().getDefaultState(), 2))
+                                    .withPlacement(uraniumConfiguration));
+
         }
     }
 }

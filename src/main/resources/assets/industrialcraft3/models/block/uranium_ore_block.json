@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "industrialcraft3:blocks/uranium_ore_block"
+  }
+}
