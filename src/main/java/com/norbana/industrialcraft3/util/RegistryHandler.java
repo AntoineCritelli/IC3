@@ -2,6 +2,7 @@ package com.norbana.industrialcraft3.util;
 
 import com.norbana.industrialcraft3.IndustrialCraft3;
 import com.norbana.industrialcraft3.blocks.*;
+import com.norbana.industrialcraft3.items.UraniumIngot;
 import com.norbana.industrialcraft3.tileentity.QuarryTileEntity;
 import com.norbana.industrialcraft3.world.feature.RubberTree;
 import net.minecraft.block.*;
@@ -29,7 +30,7 @@ public class RegistryHandler {
     // ITEMS
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot", () -> new Item(new Item.Properties().group(IndustrialCraft3.TAB)));
     public static final RegistryObject<Item> COPPER_INGOT = ITEMS.register("copper_ingot", () -> new Item(new Item.Properties().group(IndustrialCraft3.TAB)));
-    public static final RegistryObject<Item> URANIUM_INGOT = ITEMS.register("uranium_ingot", () -> new Item(new Item.Properties().group(IndustrialCraft3.TAB)));
+    public static final RegistryObject<Item> URANIUM_INGOT = ITEMS.register("uranium_ingot", UraniumIngot::new);
 
     // BLOCKS
     public static final RegistryObject<Block> TIN_BLOCK = BLOCKS.register("tin_block", () -> new Block(Block.Properties.from(Blocks.IRON_BLOCK)));
