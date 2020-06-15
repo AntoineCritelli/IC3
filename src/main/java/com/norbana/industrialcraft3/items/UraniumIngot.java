@@ -16,10 +16,12 @@ public class UraniumIngot extends Item {
         super(new Item.Properties().group(IndustrialCraft3.TAB));
     }
 
-    // TODO creer un effet de potion et trouver comment l'appliquer proprement
+    // TODO creer un effet de potion
     @Override
     public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         LivingEntity e = (LivingEntity) entityIn;
-        e.addPotionEffect(new EffectInstance(Effects.POISON, 60, 0));
+
+        if (!e.isPotionActive(Effects.POISON))
+            e.addPotionEffect(new EffectInstance(Effects.POISON, 60, 0));
     }
 }
