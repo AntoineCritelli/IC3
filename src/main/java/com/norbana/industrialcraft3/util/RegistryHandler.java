@@ -2,12 +2,15 @@ package com.norbana.industrialcraft3.util;
 
 import com.norbana.industrialcraft3.IndustrialCraft3;
 import com.norbana.industrialcraft3.blocks.*;
+import com.norbana.industrialcraft3.effect.RadiationEffect;
 import com.norbana.industrialcraft3.items.UraniumIngot;
 import com.norbana.industrialcraft3.tileentity.QuarryTileEntity;
 import com.norbana.industrialcraft3.world.feature.RubberTree;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.Potion;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -19,12 +22,15 @@ public class RegistryHandler {
     public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, IndustrialCraft3.MOD_ID);
     public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, IndustrialCraft3.MOD_ID);
     public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, IndustrialCraft3.MOD_ID);
+    public static final DeferredRegister<Effect> EFFECT_TYPE = new DeferredRegister<>(ForgeRegistries.POTIONS, IndustrialCraft3.MOD_ID);
+
 
     public static void init()
     {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         TILE_ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        EFFECT_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     // ITEMS
@@ -59,4 +65,7 @@ public class RegistryHandler {
     // TILE ENTITY
     public static final RegistryObject<TileEntityType<QuarryTileEntity>> QUARRY_TILE_ENTITY = TILE_ENTITY_TYPES.register("quarry_entity", () -> TileEntityType.Builder.create(QuarryTileEntity::new, QUARRY_BLOCK.get()).build(null));
 
+
+    // EFFECT
+    public static final RegistryObject<Effect> RADIATION_EFFECT = EFFECT_TYPE.register("radiation_effect", RadiationEffect::new);
 }

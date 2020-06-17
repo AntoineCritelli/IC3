@@ -1,6 +1,7 @@
 package com.norbana.industrialcraft3.items;
 
 import com.norbana.industrialcraft3.IndustrialCraft3;
+import com.norbana.industrialcraft3.util.RegistryHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
@@ -16,12 +17,11 @@ public class UraniumIngot extends Item {
         super(new Item.Properties().group(IndustrialCraft3.TAB));
     }
 
-    // TODO creer un effet de potion
     @Override
     public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         LivingEntity e = (LivingEntity) entityIn;
 
-        if (!e.isPotionActive(Effects.POISON))
-            e.addPotionEffect(new EffectInstance(Effects.POISON, 60, 0));
+        if (!e.isPotionActive(RegistryHandler.RADIATION_EFFECT.get()))
+            e.addPotionEffect(new EffectInstance(RegistryHandler.RADIATION_EFFECT.get(), 60, 0));
     }
 }
